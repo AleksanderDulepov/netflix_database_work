@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>General page API</title>
+</head>
+<body>
+<h1>Get info from Netflix database API</h1>
+<p>Выберите интересующую Вас категорию и заполните соответствующую форму ключевых параметров поиска</p>
+<!--<form action="http://127.0.0.1:5000/"-->
+<!--<p><input type="radio" name="choice" value="title">Поиск по названию</p>-->
+<!--<p><input type="radio" name="choice" value="range_years">Поиск по диапазону лет выпуска</p>-->
+<!--<p><input type="radio" name="choice" value="rating">Поиск по рейтингу</p>-->
+<!--<p><input type="radio" name="choice" value="genre">Поиск по жанру</p>-->
+<!--<p><input type="radio" name="choice" value="actors">Поиск по актерам</p>-->
+<!--<p><input type="radio" name="choice" value="complex">Поиск по типу, году выпуска и жанру</p>-->
+<!--<p><input type="submit" value="Вперёд"></p>-->
+<hr>
+<form action="/movie" method="get">
+    <span>
+        <p>Поиск по названию</p>
+        <input type="text" name="title" placeholder="Введите название фильма">
+        <input type="submit" value="Выполнить запрос">
+    </span>
+</form>
+<br>
+<form action="/movie/years_range" method="get">
+    <span>
+        <p>Поиск по диапазону лет выпуска</p>
+        <input type="text" name="year_begin" placeholder="Введите год ОТ">
+        <input type="text" name="year_over" placeholder="Введите год ДО">
+        <input type="submit" value="Выполнить запрос">
+    </span>
+</form>
+<br>
+<form action="/rating" method="get">
+    <span>
+        <p>Поиск по рейтингу</p>
+        <p><input type="radio" name="groups" value="adult">Для взрослых</p>
+        <p><input type="radio" name="groups" value="children">Для детей</p>
+        <p><input type="radio" name="groups" value="family">Для семейного просмотра</p>
+        <input type="submit" value="Выполнить запрос">
+    </span>
+</form>
+<br>
+<form action="/genre" method="get">
+    <span>
+        <p>Поиск по жанру</p>
+        <input type="text" name="genre" placeholder="Введите название жанра">
+        <input type="submit" value="Выполнить запрос">
+    </span>
+</form>
+<br>
+<form action="/actors" method="get">
+    <span>
+        <p>Поиск актеров, игравших с указанными более 2-х раз</p>
+        <input type="text" name="first_actor" placeholder="Первый актер">
+        <input type="text" name="second_actor" placeholder="Второй актер">
+        <input type="submit" value="Выполнить запрос">
+    </span>
+</form>
+<br>
+<form action="/complex" method="get">
+    <span>
+        <p>Поиск фильмов по типу, году выпуска и жанру</p>
+        <input type="text" name="type" placeholder="Тип">
+        <input type="text" name="release_year" placeholder="Год выпуска">
+        <input type="text" name="genre" placeholder="Жанр">
+        <input type="submit" value="Выполнить запрос">
+    </span>
+</form>
+<hr>
+</body>
+</html>
